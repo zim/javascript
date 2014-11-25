@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title> - jsFiddle demo</title>
+
+		<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+		<script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+
+
+
+		<script type='text/javascript'>
+			//<![CDATA[
+			
+			$(window).load(function() {
+				
+				function processFootballData(footballData) {
+					
+					footyStuff = footballData;
+					
+					var thisContainer = document.getElementById("results_football");
+					
+					var listTmp = document.createElement("li");
+					
+					var tmpList = "";
+					
+					for (var i = 0; (i < footyStuff.results[0].length) && (i < 100); i++) {
+						if (tmpList.length <= 0) {
+							tmpList = footyStuff.results[0][i];
+						} else {
+							tmpList = tmpList + "," + footyStuff.results[0][i];
+						}
+					}
+
+					var footballURL = "http://content.guardianapis.com/search?q=football&format=json&api-key=sdjmjg5kq7ywz9vs59hpvycm";
+					$.ajax({
+						url : footballURL,
+						dataType : 'jsonp',
+						success : function(thisData) {
+							var template = _.template($("#article-template-football").html());
+							var output = template(thisData.response);
+							$("#results_football").html(output);
+						}
+					});
+				}// end function processFootballData
+				
+				function processTennisData(tennisData) {
+					
+					tennisStuff = tennisData;
+					
+					var thisContainer = document.getElementById("results_tennis");
+					
+					var listTmp = document.createElement("li");
+					
+					var tmpList = "";
+					
+					for (var i = 0; (i < tennisStuff.results[0].length) && (i < 100); i++) {
+						if (tmpList.length <= 0) {
+							tmpList = tennisStuff.results[0][i];
+						} else {
+							tmpList = tmpList + "," + tennisStuff.results[0][i];
+						}
+					}
+
+					var tennisURL = "http://content.guardianapis.com/search?q=tennis&format=json&api-key=sdjmjg5kq7ywz9vs59hpvycm";
+					$.ajax({
+						url : tennisURL,
+						dataType : 'jsonp',
+						success : function(thisData) {
+							var template = _.template($("#article-template-tennis").html());
+							var output = template(thisData.response);
+							$("#results_tennis").html(output);
+						}
+					});
+				}// end function processTennisData
+
+				processFootballData({
+					results : [{ }]
+				});
+				processTennisData({
+					results : [{ }]
+				});
+
+			}); // end $(window).load()
+			
+			//]]>
+
+		</script>
+
+	</head>
+	<body>
+		
+		<div id="results_football"></div>
+		
+		<div id="results_tennis"></div>
+		
+		<!-- begin underscrore each -->
+		<script type='text/template' id='article-template-football'>
+		<ul>
+			<% _.each(results, function(article) { %>
+			
+			<li style="border-bottom: 1px solid #000; width: 80%;">
+			<a href='<%= article.webUrl %>'><%= article.webTitle %></a>
+			</li>
+			
+			<% }); %>
+			</ul>
+		</script>
+		<!-- end underscrore each -->
+		
+		<!-- begin underscrore each -->
+		<script type='text/template' id='article-template-tennis'>
+		<ul>
+			<% _.each(results, function(article) { %>
+			
+			<li style="border-bottom: 1px solid #000; width: 80%;">
+			<a href='<%= article.webUrl %>'><%= article.webTitle %></a>
+			</li>
+			
+			<% }); %>
+			</ul>
+		</script>
+		<!-- end underscrore each -->
+
+	</body>
+
+</html>

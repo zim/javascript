@@ -1,0 +1,72 @@
+/* @override 
+	http://iviewsource.com/exercises/json/mystyle.css */
+	
+body {
+	background: EEE7D5;
+	font-family: 'Libre Baskerville';
+}
+
+#deckwrap {
+	width: 100%;
+	margin: 0 auto;
+	background: #93A1A1;
+	padding: 1px 20px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#deckwrap .card {
+	float: left;
+	outline: 1px solid red;
+	margin: 0px 0px 10px 0px;
+}
+
+#deckwrap h3, #deckwrap h4 {
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+} 
+
+#deckwrap h3 {
+	font-size: 2em;
+	line-height: .9em;
+	font-family: 'Wendy One';
+	color: #115F79;
+}
+
+#deckwrap h4 {
+	color: #973C26;
+	font-weight: bold;
+	margin-bottom: 5px;
+	line-height: 1.2em;
+}
+
+#deckwrap img {
+	float: right;
+	margin-left: 10px;
+	border-radius: 10px;
+	width: 100px;
+}
+
+#deckwrap p {
+	color: #1E3A40;
+	font-size: .9em;
+}
+
+#deckwrap #next_btn, #deckwrap #prev_btn {
+	background: #d33682;
+	padding: 5px 10px;
+	border-radius: 10px;
+	margin: 10px 0;
+	display: inline-block;
+}
+
+#deckwrap a#next_btn, #deckwrap a#prev_btn {
+	text-decoration: none;
+	color: #FFF;
+}
+
+#deckwrap #carousel{
+	height:300px;
+}
+

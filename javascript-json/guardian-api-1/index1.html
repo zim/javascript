@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>stream</title>
+
+		<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+		<script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+
+
+
+		<script type='text/javascript'>
+			//<![CDATA[
+			
+			$(window).load(function() {
+				
+				function processData(streamData, dataUrl, container) {
+					
+					streamStuff = streamData;
+					var thisContainer = document.getElementById(container);
+					
+					var listTmp = document.createElement("li");
+					
+					var tmpList = "";
+					
+					for (var i = 0; (i < streamStuff.results[0].length) && (i < 100); i++) {
+						if (tmpList.length <= 0) {
+							tmpList = streamStuff.results[0][i];
+						} else {
+							tmpList = tmpList + "," + streamStuff.results[0][i];
+						}
+					}
+
+					var streamURL = "http://content.guardianapis.com/search?q=football&format=json&api-key=sdjmjg5kq7ywz9vs59hpvycm";
+					//var streamURL = dataUrl;
+					$.ajax({
+						url : streamURL,
+						dataType : 'jsonp',
+						success : function(thisData) {
+							var template = _.template($("#article-template").html());
+							var output = template(thisData.response);
+							$("#results" + container).html(output);
+						}
+					});
+				}// end function processFootballData
+				
+				
+
+				processData({
+					results : [{ }]
+				},'http://content.guardianapis.com/search?q=football&format=json&api-key=ragnru2k9y5fwm7eg2r7824y','_football');
+				
+				processData({
+					results : [{ }]
+				},'http://content.guardianapis.com/search?q=tennis&format=json&api-key=ragnru2k9y5fwm7eg2r7824y','_tennis');
+				
+				processData({
+					results : [{ }]
+				},'http://content.guardianapis.com/search?q=arsenal&format=json&api-key=ragnru2k9y5fwm7eg2r7824y','_arsenal');
+				
+
+			}); // end $(window).load()
+			
+			//]]>
+
+		</script>
+
+	</head>
+	<body>
+		
+		<div id="results"></div>
+		
+		<div id="results_football"></div>
+		
+		<div id="results_tennis"></div>
+		
+		<div id="results_arsenal"></div>
+		
+		<!-- begin underscrore each -->
+		<script type='text/template' id='article-template'>
+		<ul>
+			<% _.each(results, function(article) { %>
+			
+			<li style="border-bottom: 1px solid #000; width: 80%;">
+			<a href=''><%= article.webTitle %></a>
+			</li>
+			
+			<% }); %>
+			</ul>
+		</script>
+		<!-- end underscrore each -->
+
+	</body>
+
+</html>
