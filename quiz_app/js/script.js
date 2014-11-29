@@ -17,5 +17,23 @@ function init(){
 	secondUser.saveScore(18);
 	secondUser.showNameAndScores(); //Peter Scores: 18
 	
+	
+	
+	
+	//var myPlayer1_holder = document.getElementById('myplayer1_holder');
+	var myQuiz1 = new QuizMain();
+	
+	myQuiz1.createQuiz("quiz1", "quiz1_holder","This Is New Quiz One");
+	
+	//myPlayer1.pause();
+	
+	//var myPlayer2 = new videoPlayer();
+	
+	//myPlayer2.createPlayer("vid_player2", "myplayer2_holder","navigation");
+	
+	//myPlayer2.pause();
+	
+	//myPlayer1.vidplay();
+	
 }// end init()
 

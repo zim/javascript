@@ -1,0 +1,192 @@
+/*!
+ * Custom css
+ */
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* line 6, ../../sass/partials/custom.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* line 8, ../../sass/partials/custom.scss */
+body {
+  background-color: #000;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  width: 100%;
+  /*display: table;*/
+  font-family: Gotham-Book;
+  -webkit-font-smoothing: antialiased;
+  /*overflow-y: scroll;*/
+}
+
+/* line 27, ../../sass/partials/custom.scss */
+.container {
+  outline: 1px solid red;
+  /*background-image: url('../img/bg-full-1300-2.jpg');*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  padding-right: 0px;
+  padding-left: 0px;
+  /*height: 100%;*/
+}
+
+/* line 42, ../../sass/partials/custom.scss */
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* line 47, ../../sass/partials/custom.scss */
+.row {
+  outline: 1px solid blue;
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color: #323232;
+}
+
+/* line 53, ../../sass/partials/custom.scss */
+.row.row-inner {
+  padding-right: 0px;
+  padding-left: 0px;
+  background-color: yellow;
+}
+
+/*  */
+/* line 62, ../../sass/partials/custom.scss */
+[class*="col-"] {
+  outline: 1px solid red;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+/* line 72, ../../sass/partials/custom.scss */
+.col-md-2 {
+  float: left;
+}
+
+/* line 75, ../../sass/partials/custom.scss */
+.col-md-4 {
+  width: 33.33333333%;
+  float: left;
+}
+
+/* line 80, ../../sass/partials/custom.scss */
+.col-md-6 {
+  width: 50%;
+  float: left;
+}
+
+/* line 85, ../../sass/partials/custom.scss */
+.col-md-6 a.fr {
+  margin-right: 10px;
+}
+
+/* line 88, ../../sass/partials/custom.scss */
+.col-md-6 a.fl {
+  margin-left: 10px;
+}
+
+/* line 92, ../../sass/partials/custom.scss */
+.img-responsive {
+  width: 100%;
+}
+
+/* line 97, ../../sass/partials/custom.scss */
+.row-icons {
+  background-color: #00adcf;
+  padding-right: 0px;
+  padding-left: 0px;
+  text-align: center;
+}
+
+/* HEADER PANEL STYLES */
+/* line 106, ../../sass/partials/custom.scss */
+#header {
+  background-color: transparent;
+}
+
+/* line 110, ../../sass/partials/custom.scss */
+#header > div {
+  padding-top: 50px;
+  padding-bottom: 16px;
+}
+
+/* line 116, ../../sass/partials/custom.scss */
+#header img.logo {
+  float: left;
+  display: inline-block;
+  width: 100%;
+}
+
+/* line 122, ../../sass/partials/custom.scss */
+#header ul {
+  /*outline:1px solid red;*/
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  list-style-position: inside;
+  padding: 20px 0 0px 20px;
+}
+
+/* line 130, ../../sass/partials/custom.scss */
+#header ul li {
+  /*outline:1px solid yellow;*/
+  position: relative;
+  float: left;
+  display: inline-block;
+  margin-right: 17px;
+}
+
+/* line 137, ../../sass/partials/custom.scss */
+#header ul li p,
+#header ul li a {
+  margin: 0;
+  padding: 0;
+  color: #757575;
+  font-family: Gotham-Bold;
+  font-size: 0.8em;
+}
+
+/* line 147, ../../sass/partials/custom.scss */
+.topay_wrapper_inner {
+  width: 100%;
+  background-color: #ccc;
+}
+
+/* line 152, ../../sass/partials/custom.scss */
+.debt_wrap {
+  outline: 1px solid red;
+  position: relative;
+  display: inline-block;
+  display: table;
+  width: 100%;
+}
+/* line 159, ../../sass/partials/custom.scss */
+.debt_wrap div.table {
+  border: 1px solid black;
+  display: table;
+}
+/* line 160, ../../sass/partials/custom.scss */
+.debt_wrap div.tr {
+  border: 1px solid black;
+  display: table-row;
+}
+/* line 161, ../../sass/partials/custom.scss */
+.debt_wrap div.td {
+  border: 1px solid black;
+  display: table-cell;
+}
+/* line 163, ../../sass/partials/custom.scss */
+.debt_wrap span {
+  outline: 1px solid green;
+  position: relative;
+  display: inline-block;
+  display: table-cell;
+  padding: .3rem;
+  color: #000;
+  width: 25%;
+}
