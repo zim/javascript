@@ -56,14 +56,14 @@ function inheritPrototype(childObject, parentObject) {
 // The DebitObject function is the parent for all other DebitObject objects;​
 // All question objects will inherit from this Question constructor​
 
-function DebitObject( debitName, value, domId, callback ) {
+function DebitObject( debitName, value, payed, domId, callback ) {
 	//console.log("debit object domId = " + domId);
     // Initialize the instance properties
     this.name = debitName;
     
     //this.endDate = endDate;
     this.value = value;
-    this.payed = false;
+    this.payed = payed;
     this.domId = domId;
 
     // this.domElement = document.getElementById(domId);
@@ -85,22 +85,28 @@ function DebitObject( debitName, value, domId, callback ) {
         // return QUIZ_CREATED_DATE;
    // };
     //console.log("Quiz Created On: " + this.getQuizDate());
-} // end function Question(theQuestion, theChoices, theCorrectAnswer)
+} // end function DebitObject(debitName, value, domId, callback)
 
 // Define the prototype methods that will be inherited​
 	DebitObject.prototype.getDebitName = function () {
-		console.log("this.debit name = " + this.name);
+		//console.log("DebitObject.prototype.getDebitName method called and = " + this.name);
 	    return this.name;
 	};
 	
 	DebitObject.prototype.getValue = function () {
-		console.log("this.value = " + this.value);
+		//console.log("DebitObject.prototype.getValue method called and  = " + this.value);
 	    return this.value;
 	};
 	
 	DebitObject.prototype.getDate = function () {
-		console.log("this.getDate = " + this.startDate);
+		//console.log("DebitObject.prototype.getDate method called and = " + this.startDate);
 	    return this.startDate;
+	};
+	
+	DebitObject.prototype.setPayed = function (payedBool) {
+		this.payed = payedBool;
+		//console.log("DebitObject.prototype.setPayed method called and = " + this.payed);
+	    return this.payed;
 	};
 	
 	// DebitObject.prototype.displayDebit = function () {

@@ -1,6 +1,6 @@
 var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
 	
-	console.log('BOOOOOOOOM');
+	//console.log('BOOOOOOOOM');
 	
 	// CREATE MAIN WRAPPER
 	var topayElement = document.createElement('div');
@@ -9,7 +9,7 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
 	
 	// CHECK FOR MOBILE TOUCH DEVICE
 	var touchEnabled = ('ontouchstart' in document.documentElement);
-	console.log("touchEnabled = " + touchEnabled);
+	//console.log("touchEnabled = " + touchEnabled);
 	
 	// CHECK BROWSER SUPPORT FOR CSS3 TRANSITIONS
 	function supportsTransitions(){
@@ -23,14 +23,14 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
 	
 	// CREATE APP FUNCTION
 	function createApp(topayId,domId,topayTitle,debtList){
-		console.log('function createApp called');
-		console.log('topayId = ' + topayId + " domId = " + domId);
-		console.log('debtList = ' + debtList);
+		//console.log('function createApp called');
+		//console.log('topayId = ' + topayId + " domId = " + domId);
+		//console.log('debtList = ' + debtList);
 		//callback("boom");
 		
 		// CREATE topay DOM ELEMENT
 		var domElement = document.getElementById(domId);
-		console.log('domElements = ' + domElement);
+		//console.log('domElements = ' + domElement);
 		domElement.setAttribute('class','col-md-12 topay_wrapper');
 		
 		domElement.onmouseover = onMouseOver;
@@ -55,7 +55,7 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
 		// DEAL WITH DEBTLIST ARRAY
 		var myJsonString = JSON.stringify(debtList);
 		
-		//console.log(myJsonString);
+		console.log(myJsonString);
 		
 		// for (var i in debtList) {
 		  // console.log(debtList[i]);
@@ -85,17 +85,30 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
 		var debitDateElement = [];
 		var debitValueElement = [];
 		var debitPayedElement = [];
+		var debitPayedCheckElement = [];
+		var debitPayedCheckLabel = [];
+		var btnEditValue = [];
 		// CREATE CONTROLS
 		for (var i in debtList) {
-		  console.log(debtList[i]);
-		  console.log(debtList[i].getDate());
+		  //console.log("debtList[i] = " + debtList[i]);
+		  //console.log("debtList[i].getDate() = " + debtList[i].getDate());
+		  
+		  console.log("debtList[i].payed = " + debtList[i].payed);
 		  
 		  topayDebt[i] = document.createElement('div');
 		  topayDebt[i].id = "debt_" + i + "wrap";
-		  topayDebt[i].setAttribute('class','debt_wrap');
+		  
+		  if(debtList[i].payed){
+		  	topayDebt[i].setAttribute('class','debt_wrap debt_green');
+		  }else{
+		  	topayDebt[i].setAttribute('class','debt_wrap debt_red');
+		  }
+		  
+		  
+		  
 		  //console.log("topayDebt[i] = " + topayDebt[i])
 		  
-		  console.log("domElement = " + domElement.id);
+		  //console.log("domElement = " + domElement.id);
 		  
 		  
 		  domElement.appendChild(topayDebt[i]);
@@ -107,9 +120,9 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
 		  topayDebt[i].appendChild(debitNameElement[i]);
 		  
 		  // DATE
-		  debitDateElement[i] = document.createElement('span');
-		  debitDateElement[i].innerHTML = debtList[i].startDate;
-		  topayDebt[i].appendChild(debitDateElement[i]);
+		  // debitDateElement[i] = document.createElement('span');
+		  // debitDateElement[i].innerHTML = debtList[i].startDate;
+		  // topayDebt[i].appendChild(debitDateElement[i]);
 		  
 		  // VALUE
 		  debitValueElement[i] = document.createElement('span');
@@ -121,15 +134,44 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
 		  debitPayedElement[i].innerHTML = debtList[i].payed;
 		  topayDebt[i].appendChild(debitPayedElement[i]);
 		  
+		  // PAYED CHECKBOX ELLEMENT
+		  // debitPayedCheckElement[i] = document.createElement('span');
+		  // debitPayedCheckElement[i].innerHTML = debtList[i].payed;
+		  // topayDebt[i].appendChild(debitPayedElement[i]);
+		  
+		  // debitPayedCheckElement[i] = document.createElement('input');
+			// debitPayedCheckElement[i].type = "checkbox";
+			// debitPayedCheckElement[i].name = "checkboxname";
+			// debitPayedCheckElement[i].value = "checkboxvalue";
+			// debitPayedCheckElement[i].id = "checkboxid";
+			// topayDebt[i].appendChild(debitPayedCheckElement[i]);
+// 			
+			// debitPayedCheckLabel[i] = document.createElement('label')
+			// debitPayedCheckLabel[i].htmlFor = "id";
+			// debitPayedCheckLabel[i].appendChild(document.createTextNode('text for label after checkbox'));
+		  // topayDebt[i].appendChild(debitPayedCheckLabel[i]);
+		  
+		    btnEditValue[i] = document.createElement('button');
+			btnEditValue[i].id = i + "_btnEditValue";
+			btnEditValue[i].innerHTML = "[EDIT" + i + "]";
+			
+			if (btnEditValue[i].addEventListener) {
+	            btnEditValue[i].addEventListener("click", editValue, false);
+	        } else {
+	            btnEditValue[i].attachEvent('onclick', editValue);
+	        }
+			debitPayedElement[i].appendChild(btnEditValue[i]);
+		  
+		  
 		}// end for
-		
-		
-		
 			
 	}// END function createtopayControls(topayId,domElement){
 	
 	
-	
+	function editValue() {
+        
+			console.log("btn edit clicked" + this + " THIS");
+    }
 	
 	function createtopayControls(topayId,domElement){
 		// CREATE CONTROLS
@@ -207,7 +249,7 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
        // var topay = document.getElementById("topay1");
        // var button = document.getElementById("play");
        //if (topay.paused) {
-       	console.log(topayElement);
+       	//console.log("topayElement = " + topayElement);
           topayElement.play();
           //button.textContent = "||";
        // } else {
@@ -218,24 +260,24 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
 
     function restart() {
         topayElement.currentTime = 0;
-        console.log("restarted");
+        //console.log("restarted");
     }
     
     function pause() {
         topayElement.pause();
 			isPlaying = false;
-			console.log(isPlaying);
+			//console.log(isPlaying);
     }
     
     function animControls() {
     	
     	if(!controlsExpanded){
-	    	console.log('controlsExpanded = true ' + this.parentNode.id);
+	    	//console.log('controlsExpanded = true ' + this.parentNode.id);
 	        this.parentNode.style.left = '0px';
 			
 			controlsExpanded = true;
 		}else{
-			console.log('controlsExpanded = false ' + this.parentNode.id);
+			//console.log('controlsExpanded = false ' + this.parentNode.id);
 	        this.parentNode.style.left = '-176px';
 			
 			controlsExpanded = false;
@@ -268,7 +310,7 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList){
 	
 	function ontopayFadeIn(event){
 		// console.log('onMouseOver hit');
-		console.log('ontopayFadeIn = ' + this.id);
+		//console.log('ontopayFadeIn = ' + this.id);
 	}
 	
 	////////////// Public methods ///////////////////////////////////////////	

@@ -27,10 +27,48 @@
 
 </head>
 <body>
-
-<div class="container">
     
+    <div class="layout">
+        <div class="col-md-6">
+            <p>col 6</p>
+        </div>
+        <div class="col-md-6-end">
+            <p>col 6</p>
+        </div>
+    </div>
+    
+    <!-- BEGIN COL 6 ROWS -->
+    <div class="row">
+        <section class="layout">
+            <div class="col-md-6">
+                <p>col 6</p>
+            </div>
+            <div class="col-md-6-end">
+                <p>col 6</p>
+            </div>
+        </section>
+    </div>
+    
+    <!-- BEGIN COL 4 ROWS -->
+    <div class="row">
+        <section class="layout">
+            <div class="col-md-4">
+                <p>col 4</p>
+            </div>
+            <div class="col-md-4">
+                <p>col 4</p>
+            </div>
+            <div class="col-md-4-end">
+                <p>col 4</p>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- <div id="result"></div> -->
     <div id="header" class="row">
+        <section class="layout">
+    
         <div class="col-md-12">
             
                 <a href="home" title="link one"><img src="img/title-main-1.png" class="logo" /></a>
@@ -40,7 +78,8 @@
                     <li><a href="#" target="_blank" title="#">ADD PAYMENT ITEM</a></li>
                 </ul>
         </div>
-      </div>
+      </section>
+    </div>
       
       <!-- <div class="row">
         <div class="col-lg-4 col-md-1 col-sm-5 col-xs-5">
@@ -64,13 +103,17 @@
       </div> --> <!-- end row -->
     
       <div class="row">
+          <section class="layout">
          <div id="topay_info_holder" class="col-md-12">
              <div id="debt_0wrap" class="debt_wrap">
                  <span class="span-name">Title</span>
-                 <span>Date Created</span>
+                 <!-- <span>Date Created</span> -->
                  <span>Amount</span>
-                 <span>Payed</span></div>
+                 <span>Payed</span>
+                 <!-- <span>check</span> -->
+            </div>
          </div> 
+         </section>
       </div>
       
       <div class="row">
@@ -78,10 +121,12 @@
       </div>
     
     
-</div>
+
 <!-- scripts -->
 <!-- end scripts-->
 
 <script type="text/javascript" src="js/script.js"></script>
+
+<script src="http://localhost:35729/livereload.js"></script>
 </body>
 </html>

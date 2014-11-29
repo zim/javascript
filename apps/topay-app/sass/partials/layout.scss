@@ -1,0 +1,279 @@
+//Susy Setup
+$total-columns          : 12;             // a 12-column grid
+$column-width           : 4em;            // each column is 4em wide
+$gutter-width           : 1em;            // 1em gutters between columns
+$grid-padding           : $gutter-width*2;  // grid-padding equal to gutters
+$show-grid-backgrounds  : true;
+$border-box-sizing      : true;
+
+//Options
+
+// $container-style        : fluid; : static;
+// @include prefix(1,12); add a column
+
+$small                  : 30em;
+$medium                 : 47em;
+$large                  : 75em;
+
+@include border-box-sizing;
+
+div[class^="col-"], div[class*="col-"]{
+  width:100%;
+}
+// Content -------------------------------------
+.layout {
+  // NEED THIS TO ENABLE SUSY GRID TO WORK
+  @include container;
+  
+  //max-width:54em;
+  //min-width:54em;
+  
+  // Main -------------------------------------
+  div[class^="col-"], div[class*="col-"]{
+      outline:1px solid red;
+      background-color:#ccc;
+      position:relative;
+      display:inline-block;
+      margin-bottom:10px;
+      
+      //BREAKPOINTS
+      @include at-breakpoint($small) {
+        outline:1px solid black;
+      }
+      @include at-breakpoint($medium) {
+        outline:1px solid green;
+      }
+  }// end common col- styles
+  
+  // col-6 common styles
+  div[class^="col-md-6-"], div[class*="col-md-6-"]{
+    
+       //BREAKPOINTS
+        @include at-breakpoint($small) {
+          //@include span-columns(6,12);
+        }
+        @include at-breakpoint($medium) {
+          
+        }
+    }// col-6 common styles
+    
+    .col-md-6 {
+        @include at-breakpoint($small) {
+          @include span-columns(6,12);
+          outline:1px solid green;
+          
+          &.push3{
+            background-color:green;
+            @include span-columns(6,12);
+            @include push(3);
+          }
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(6,12);
+          outline:1px solid green;
+        }   
+    } //col-md-6-2
+    
+    .col-md-6-end {
+        @include at-breakpoint($small) {
+          @include span-columns(6 omega,12);
+          outline:1px solid green;
+          background-color:yellow;
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(6 omega,12);
+          outline:1px solid green;
+        }
+    } //col-md-6-2
+    
+  // col-4 common styles
+  div[class^="col-md-4-"], div[class*="col-md-4-"]{
+    
+       //BREAKPOINTS
+        @include at-breakpoint($small) {
+          //@include span-columns(6,12);
+        }
+        @include at-breakpoint($medium) {
+          
+        }
+    }// col-4 common styles
+    
+    .col-md-4 {
+        @include at-breakpoint($small) {
+          @include span-columns(4,12);
+          outline:1px solid green;
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(4,12);
+          outline:1px solid green;
+        }
+    } //col-md-6-2
+    .col-md-4-end {
+        @include at-breakpoint($small) {
+          @include span-columns(4 omega,12);
+          outline:1px solid green;
+          background-color:yellow;
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(4 omega,12);
+          outline:1px solid green;
+        }
+    } //col-md-4-end
+    
+  // col-3 common styles
+  div[class^="col-md-3-"], div[class*="col-md-3-"]{
+    
+       //BREAKPOINTS
+        @include at-breakpoint($small) {
+          //@include span-columns(6,12);
+        }
+        @include at-breakpoint($medium) {
+          
+        }
+    }// col-4 common styles
+    
+    .col-md-3 {
+        @include at-breakpoint($small) {
+          @include span-columns(3,12);
+          outline:1px solid green;
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(3,12);
+          outline:1px solid green;
+        }
+    } //col-md-6-2
+    .col-md-3-end {
+        @include at-breakpoint($small) {
+          @include span-columns(3 omega,12);
+          outline:1px solid green;
+          background-color:yellow;
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(3 omega,12);
+          outline:1px solid green;
+        }
+    } //col-md-3-end
+    
+  // col-2 common styles
+  div[class^="col-md-2-"], div[class*="col-md-2-"]{
+    
+       //BREAKPOINTS
+        @include at-breakpoint($small) {
+          //@include span-columns(6,12);
+        }
+        @include at-breakpoint($medium) {
+          
+        }
+    }// col-4 common styles
+    
+    .col-md-2 {
+        @include at-breakpoint($small) {
+          @include span-columns(2,12);
+          outline:1px solid green;
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(2,12);
+          outline:1px solid green;
+        }
+    } //col-md-6-2
+    .col-md-2-end {
+        @include at-breakpoint($small) {
+          @include span-columns(2 omega,12);
+          outline:1px solid green;
+          background-color:yellow;
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(2 omega,12);
+          outline:1px solid green;
+        }
+    } //col-md-2-end
+    
+  // col-2 common styles
+  div[class^="col-md-1-"], div[class*="col-md-1-"]{
+    
+       //BREAKPOINTS
+        @include at-breakpoint($small) {
+          //@include span-columns(6,12);
+        }
+        @include at-breakpoint($medium) {
+          
+        }
+    }// col-4 common styles
+    
+    .col-md-1 {
+        @include at-breakpoint($small) {
+          @include span-columns(1,12);
+          outline:1px solid green;
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(1,12);
+          outline:1px solid green;
+        }
+    } //col-md-6-2
+    .col-md-1-end {
+        @include at-breakpoint($small) {
+          @include span-columns(1 omega,12);
+          outline:1px solid green;
+          background-color:yellow;
+        }
+        @include at-breakpoint($medium) {
+          @include span-columns(1 omega,12);
+          outline:1px solid green;
+        }
+    } //col-md-2-end
+
+    // PUSH STYLES
+    .push3{
+      
+     
+      
+      @include at-breakpoint($small) {
+          
+        }
+      @include at-breakpoint($medium) {
+       
+      }
+      
+    }
+  
+}// end .layout {
+
+.row{
+  background-color:yellow;
+ 
+  &.offset{
+    background-color:black;
+    outline:1px solid red;
+    .layout {
+      // NEED THIS TO ENABLE SUSY GRID TO WORK
+      @include container;
+      outline:1px solid red;
+      .col-md-6 {
+          @include at-breakpoint($small) {
+            //@include push(3);
+            //@include span-columns(4,12);
+            @include push(1);
+            outline:1px solid green;
+            background-color:green;
+          }
+          @include at-breakpoint($medium) {
+            @include span-columns(6,12);
+            outline:1px solid green;
+          }   
+      } //col-md-6-2
+      
+    }
+    
+  }
+}
+
+// different row -------------------------------------
+// .layout {
+  // // NEED THIS TO ENABLE SUSY GRID TO WORK
+  // @include container;
+// 
+// }
+
+body{
+  outline:1px solid red;
+}
