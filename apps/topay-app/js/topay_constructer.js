@@ -1,41 +1,18 @@
 var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList,show){
 	
-	//console.log('BOOOOOOOOM');
-	//console.log("show = " + show);
 	// CREATE MAIN WRAPPER
 	var topayElement = document.createElement('div');
 	var viewTotal = 0;
 	
 	var viewTotalDiv = document.getElementById("total_div");
 	
-	var controlsExpanded = false;
-	
-	// CHECK FOR MOBILE TOUCH DEVICE
-	var touchEnabled = ('ontouchstart' in document.documentElement);
-	//console.log("touchEnabled = " + touchEnabled);
-	
-	// CHECK BROWSER SUPPORT FOR CSS3 TRANSITIONS
-	function supportsTransitions(){
-		var testDiv = document.createElement('div');
-		if(testDiv.style.transition != undefined || testDiv.style['-webkit-transition'] != undefined){
-			return true;
-		}else{
-			return false;			
-		}
-	}
-	
 	// CREATE APP FUNCTION
 	function createApp(topayId,domId,topayTitle,debtList,show){
-		//console.log("show = " + show);
-		//console.log('function createApp called');
-		//console.log('topayId = ' + topayId + " domId = " + domId);
-		//console.log('debtList = ' + debtList);
 		
 		viewTotal = 0;
 		
 		// CREATE topay DOM ELEMENT
 		var domElement = document.getElementById(domId);
-		console.log('domElement = ' + domElement);
 		domElement.setAttribute('class','row topay_wrapper');
 		
 		domElement.onmouseover = onMouseOver;
@@ -144,22 +121,7 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList,show){
 					  debitPayedElement[i].innerHTML = debtList[i].payed;
 					  topayDebt[i].appendChild(debitPayedElement[i]);
 					  
-					  // PAYED CHECKBOX ELLEMENT
-					  // debitPayedCheckElement[i] = document.createElement('span');
-					  // debitPayedCheckElement[i].innerHTML = debtList[i].payed;
-					  // topayDebt[i].appendChild(debitPayedElement[i]);
-					  
-					  // debitPayedCheckElement[i] = document.createElement('input');
-						// debitPayedCheckElement[i].type = "checkbox";
-						// debitPayedCheckElement[i].name = "checkboxname";
-						// debitPayedCheckElement[i].value = "checkboxvalue";
-						// debitPayedCheckElement[i].id = "checkboxid";
-						// topayDebt[i].appendChild(debitPayedCheckElement[i]);
-			// 			
-						// debitPayedCheckLabel[i] = document.createElement('label')
-						// debitPayedCheckLabel[i].htmlFor = "id";
-						// debitPayedCheckLabel[i].appendChild(document.createTextNode('text for label after checkbox'));
-					  // topayDebt[i].appendChild(debitPayedCheckLabel[i]);
+					 
 					  
 					greenTick[i] = document.createElement('div');
 					greenTick[i].setAttribute('class','green_tick');
@@ -325,9 +287,11 @@ var TopayMain = TopayMain || (function(topayId,domId,topayTitle,debtList,show){
 	}// END function createtopayControls(topayId,domElement){
 	
 	
-	function editValue() {
+	function editValue(id) {
         
 			console.log("btn edit clicked" + this + " THIS");
+			//console.log("btn edit clicked" + debtList[i].payed + " THIS");
+			
     }
 	
 	function createtopayControls(topayId,domElement){
