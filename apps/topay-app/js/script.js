@@ -31,7 +31,10 @@ function logStuff (userData) {
 
 $(document).ready(function(){
 	
+	
+	
 	var allDebts = [];
+	var storage = false;
 	
 	if (typeof(Storage) != "undefined") {
 	    // Store
@@ -62,8 +65,10 @@ $(document).ready(function(){
 					var retrievedObject = localStorage.getItem('testObject');
 					
 					console.log('retrievedObject: ', JSON.parse(retrievedObject));
+					
+					storage = true;
 			        
-			        TopayMain.createApp("topayId", "topay_holder","This Is New Topay App", JSON.parse(retrievedObject));
+			        TopayMain.createApp("topayId", "topay_holder","This Is New Topay App", JSON.parse(retrievedObject),"all");
 			    },
 			    error: function() {
 			        //handle the error
@@ -80,8 +85,10 @@ $(document).ready(function(){
 			console.log('retrievedObject: ', JSON.parse(retrievedObject));
 			
 			var retrievedObjectPassed = JSON.parse(retrievedObject);
+			
+			storage = true;
 	        
-	        TopayMain.createApp("topayId", "topay_holder","This Is New Topay App", retrievedObjectPassed);
+	        TopayMain.createApp("topayId", "topay_holder","This Is New Topay App", retrievedObjectPassed,"all");
 		}
 	    
 	} else {
@@ -91,11 +98,29 @@ $(document).ready(function(){
 	
 	
 	
-  $("button").click(function(){
-    $.ajax({url:"demo_test.txt",success:function(result){
-      $("#div1").html(result);
-    }});
-  });
+  $("#btn_one").click(function(){
+  	// console.log('hey' + storage);
+  	// console.log('retrievedObject on click btn one: ', retrievedObjectPassed);
+  	
+  	TopayMain.createApp("payed", "topay_holder","This Is New btn click Topay App", retrievedObjectPassed,"payed");
+
+  });// end button click
+  
+  $("#btn_two").click(function(){
+  	// console.log('hey two' + storage);
+  	// console.log('retrievedObject on click btn two: ', retrievedObjectPassed);
+  	
+  	TopayMain.createApp("unpayed", "topay_holder","This Is New btn click Topay App", retrievedObjectPassed,"unpayed");
+  	
+  });// end button click
+  
+  $("#btn_three").click(function(){
+  	// console.log('hey three' + storage);
+  	// console.log('retrievedObject on click btn three: ', retrievedObjectPassed);
+  	
+  	TopayMain.createApp("all", "topay_holder","This Is New btn click Topay App", retrievedObjectPassed,"all");
+  	
+  });// end button click
   
   
   

@@ -1,0 +1,68 @@
+/*
+Error: Undefined mixin 'border-box-sizing'.
+        on line 18 of /Applications/MAMP/htdocs/javascript/apps/topay-app/sass/partials/layout.scss, in `border-box-sizing'
+        from line 18 of /Applications/MAMP/htdocs/javascript/apps/topay-app/sass/partials/layout.scss
+
+13: 
+14: $small                  : 30em;
+15: $medium                 : 47em;
+16: $large                  : 75em;
+17: 
+18: @include border-box-sizing;
+19: 
+20: div[class^="col-"], div[class*="col-"]{
+21:   width:100%;
+22: }
+23: // Content -------------------------------------
+
+Backtrace:
+/Applications/MAMP/htdocs/javascript/apps/topay-app/sass/partials/layout.scss:18:in `border-box-sizing'
+/Applications/MAMP/htdocs/javascript/apps/topay-app/sass/partials/layout.scss:18
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:338:in `visit_mixin'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/stack.rb:98:in `with_mixin'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/stack.rb:98:in `with_mixin'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:336:in `visit_mixin'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:36:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:167:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:36:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:8:in `send'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/tree/root_node.rb:20:in `render'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/engine.rb:268:in `render'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:491:in `update_stylesheet'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:215:in `update_stylesheets'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/1.8/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/1.8/gems/compass-1.0.1/lib/compass/sass_compiler.rb:40:in `compile!'
+/Library/Ruby/Gems/1.8/gems/compass-1.0.1/lib/compass/commands/update_project.rb:49:in `perform'
+/Library/Ruby/Gems/1.8/gems/compass-1.0.1/lib/compass/commands/base.rb:18:in `execute'
+/Library/Ruby/Gems/1.8/gems/compass-1.0.1/lib/compass/commands/project_base.rb:19:in `execute'
+/Library/Ruby/Gems/1.8/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Library/Ruby/Gems/1.8/gems/compass-1.0.1/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Library/Ruby/Gems/1.8/gems/compass-1.0.1/bin/compass:30
+/Library/Ruby/Gems/1.8/gems/compass-1.0.1/bin/compass:44:in `call'
+/Library/Ruby/Gems/1.8/gems/compass-1.0.1/bin/compass:44
+/usr/bin/compass:23:in `load'
+/usr/bin/compass:23
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'border-box-sizing'.\A         on line 18 of /Applications/MAMP/htdocs/javascript/apps/topay-app/sass/partials/layout.scss, in `border-box-sizing'\A         from line 18 of /Applications/MAMP/htdocs/javascript/apps/topay-app/sass/partials/layout.scss\A \A 13: \A 14: $small                  : 30em;\A 15: $medium                 : 47em;\A 16: $large                  : 75em;\A 17: \A 18: @include border-box-sizing;\A 19: \A 20: div[class^=\"col-\"], div[class*=\"col-\"]{\A 21:   width:100%;\A 22: }\A 23: // Content -------------------------------------"; }

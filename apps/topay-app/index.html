@@ -28,14 +28,7 @@
 </head>
 <body>
     
-    <div class="layout">
-        <div class="col-md-6">
-            <p>col 6</p>
-        </div>
-        <div class="col-md-6-end">
-            <p>col 6</p>
-        </div>
-    </div>
+    
     
     <!-- BEGIN COL 6 ROWS -->
     <div class="row">
@@ -66,59 +59,39 @@
 
 
     <!-- <div id="result"></div> -->
-    <div id="header" class="row">
+    <div id="header" class="row row-logo">
         <section class="layout">
     
         <div class="col-md-12">
             
                 <a href="home" title="link one"><img src="img/title-main-1.png" class="logo" /></a>
-                <ul class="nav">
-                    <li><a href="#" target="_blank" title="#">BUDGET LINK ONE</a></li>
-                    <li><a href="#" target="_blank" title="#">BUDGET LINK TWO</a></li>
-                    <li><a href="#" target="_blank" title="#">ADD PAYMENT ITEM</a></li>
-                </ul>
+                
+                <div id="total_div" class="total"></div>
+                
         </div>
       </section>
     </div>
-      
-      <!-- <div class="row">
-        <div class="col-lg-4 col-md-1 col-sm-5 col-xs-5">
-            <span class="visible-lg">.col-lg-4</span>
-            <span class="visible-md">.col-md-1</span>
-            <span class="visible-sm">.col-sm-5</span>
-            <span class="visible-xs">.col-xs-5</span>
-        </div>
-        <div class="col-lg-4 col-md-5 col-sm-1 col-xs-6">
-            <span class="visible-lg">.col-lg-4</span>
-            <span class="visible-md">.col-md-5</span>
-            <span class="visible-sm">.col-sm-1</span>
-            <span class="visible-xs">.col-xs-6</span>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-1">
-            <span class="visible-lg">.col-lg-4</span>
-            <span class="visible-md">.col-md-6</span>
-            <span class="visible-sm">.col-sm-6</span>
-            <span class="visible-xs">.col-xs-1</span>
-       </div>
-      </div> --> <!-- end row -->
     
-      <div class="row">
+    <div class="row row-nav">
+        <section class="layout">
+                <div id="btn_one" class="col-md-4">BUDGET LINK ONE</div>
+                <div id="btn_two" class="col-md-4">BUDGET LINK TWO</div>
+                <div id="btn_three" class="col-md-4-end">BUDGET LINK THREE</div>
+      </section>
+    </div>
+    
+      <div class="row row-headings">
           <section class="layout">
-         <div id="topay_info_holder" class="col-md-12">
-             <div id="debt_0wrap" class="debt_wrap">
-                 <span class="span-name">Title</span>
-                 <!-- <span>Date Created</span> -->
-                 <span>Amount</span>
-                 <span>Payed</span>
-                 <!-- <span>check</span> -->
-            </div>
-         </div> 
+         
+                 <div class="col-md-4 span-name"><p>Title</p></div>
+                 <div class="col-md-4"><p>Amount</p></div>
+                 <div class="col-md-4-end"><p>Payed</p></div>
          </section>
       </div>
       
-      <div class="row">
-         <div id="topay_holder" class="col-md-12"></div> 
-      </div>
+      
+      <div id="topay_holder" class="row"></div> 
+     
     
     
 

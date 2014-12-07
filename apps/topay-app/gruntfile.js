@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         // tasks: ['uglify']
       // }, //script
       sass: {
-        files: ['sass/*'],
+        files: ['sass/partials/*'],
         tasks: ['compass:dev']
       }, //sass
       html: {
