@@ -89,12 +89,24 @@ function DebitObject( debitName, value, payed, domId, callback ) {
 
 // Define the prototype methods that will be inherited​
 	DebitObject.prototype.getDebitName = function () {
-		//console.log("DebitObject.prototype.getDebitName method called and = " + this.name);
+		console.log("DebitObject.prototype.getDebitName method called and = " + this.name);
 	    return this.name;
 	};
 	
 	DebitObject.prototype.getValue = function () {
 		//console.log("DebitObject.prototype.getValue method called and  = " + this.value);
+	    return this.value;
+	};
+	DebitObject.prototype.setValue = function (sum) {
+		console.log("DebitObject.prototype.setValue method called and = " + this.value);
+		this.value = this.value - parseInt(sum);
+		
+		if(this.value<=0){
+			this.payed = true;
+		}
+		
+		console.log("DebitObject.prototype.setValue method called and = " + this.value);
+		
 	    return this.value;
 	};
 	
@@ -104,8 +116,9 @@ function DebitObject( debitName, value, payed, domId, callback ) {
 	};
 	
 	DebitObject.prototype.setPayed = function (payedBool) {
+		console.log("DebitObject.prototype.setPayed method called and = " + this.payed);
 		this.payed = payedBool;
-		//console.log("DebitObject.prototype.setPayed method called and = " + this.payed);
+		console.log("DebitObject.prototype.setPayed method called and = " + this.payed);
 	    return this.payed;
 	};
 	

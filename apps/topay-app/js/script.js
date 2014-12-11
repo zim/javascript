@@ -7,7 +7,7 @@ var TopayMain = new TopayMain();
 
 //JSON.stringify (allDebts, null, 4);
 
-// generic logStuff function that prints to console​
+//generic logStuff function that prints to console​
 function logStuff (userData) {
     if ( typeof userData === "string")
     {
@@ -31,7 +31,8 @@ function logStuff (userData) {
 
 $(document).ready(function(){
 	
-	
+	var retrievedObject;
+	var retrievedObjectPassed;
 	
 	var allDebts = [];
 	var storage = false;
@@ -62,7 +63,7 @@ $(document).ready(function(){
 					localStorage.setItem('testObject', JSON.stringify(allDebts));
 					
 					// Retrieve the object from storage
-					var retrievedObject = localStorage.getItem('testObject');
+					retrievedObject = localStorage.getItem('testObject');
 					
 					console.log('retrievedObject: ', JSON.parse(retrievedObject));
 					
@@ -80,11 +81,11 @@ $(document).ready(function(){
 			console.log('not null');
 			
 			// Retrieve the object from storage
-			var retrievedObject = localStorage.getItem('testObject');
+			retrievedObject = localStorage.getItem('testObject');
 			
 			console.log('retrievedObject: ', JSON.parse(retrievedObject));
 			
-			var retrievedObjectPassed = JSON.parse(retrievedObject);
+			retrievedObjectPassed = JSON.parse(retrievedObject);
 			
 			storage = true;
 	        
@@ -101,7 +102,8 @@ $(document).ready(function(){
   $("#btn_one").click(function(){
   	// console.log('hey' + storage);
   	// console.log('retrievedObject on click btn one: ', retrievedObjectPassed);
-  	
+  	retrievedObject = localStorage.getItem('testObject');
+  	retrievedObjectPassed = JSON.parse(retrievedObject);
   	TopayMain.createApp("payed", "topay_holder","This Is New btn click Topay App", retrievedObjectPassed,"payed");
 
   });// end button click
@@ -109,7 +111,8 @@ $(document).ready(function(){
   $("#btn_two").click(function(){
   	// console.log('hey two' + storage);
   	// console.log('retrievedObject on click btn two: ', retrievedObjectPassed);
-  	
+  	retrievedObject = localStorage.getItem('testObject');
+  	retrievedObjectPassed = JSON.parse(retrievedObject);
   	TopayMain.createApp("unpayed", "topay_holder","This Is New btn click Topay App", retrievedObjectPassed,"unpayed");
   	
   });// end button click
@@ -117,7 +120,8 @@ $(document).ready(function(){
   $("#btn_three").click(function(){
   	// console.log('hey three' + storage);
   	// console.log('retrievedObject on click btn three: ', retrievedObjectPassed);
-  	
+  	retrievedObject = localStorage.getItem('testObject');
+  	retrievedObjectPassed = JSON.parse(retrievedObject);
   	TopayMain.createApp("all", "topay_holder","This Is New btn click Topay App", retrievedObjectPassed,"all");
   	
   });// end button click
