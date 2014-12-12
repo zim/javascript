@@ -1,11 +1,6 @@
 
 
 var TopayMain = new TopayMain();
-	
-// TopayMain.createApp("topayId", "topay_holder","This Is New Topay App", debtList);
-
-
-//JSON.stringify (allDebts, null, 4);
 
 //generic logStuff function that prints to console​
 function logStuff (userData) {
@@ -34,17 +29,21 @@ $(document).ready(function(){
 	var retrievedObject;
 	var retrievedObjectPassed;
 	
+	// create an ARRAY to hold the DebitObject list
 	var allDebts = [];
+	
+	// boolean for storage set
 	var storage = false;
 	
+	// CHECK TO SEE IF LOCAL IS AVAILABLE
 	if (typeof(Storage) != "undefined") {
 	    // Store
 	    // localStorage.setItem("lastname", "Smith");
 	    // Retrieve
 	    // document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+	    // CHECK TO SEE IF LOCAL STORAGE HAS BEEN SET
 	    if (localStorage.getItem("testObject") === null) {
-		  //...
-		  console.log('null');
+		  //console.log('null');
 			  //  BEGIN AJAX CALL
 				$.ajax({
 			    url: "js/debts.json",
@@ -53,32 +52,32 @@ $(document).ready(function(){
 			            //handle the data   
 			            console.log('key = ' + key + 'value.name = ' + value.name + 'value.value = ' + value.value + 'value.payed = ' + value.payed + 'value.domId = ' + value.domId);
 			            
-			
+						// add new DebitObect objects to allDebts array
 			            allDebts.push(new DebitObject(value.name, value.value, value.payed, value.domId, logStuff));
-			        });
-			        console.log(data);
-			        console.log("allDebts = " + allDebts);
+			        });// end $.each(data, function(key, value){
+			        // console.log(data);
+			        // console.log("allDebts = " + allDebts);
 			        
-			        // Put the object into storage
+			        // Put the alldebts array object into storage
 					localStorage.setItem('testObject', JSON.stringify(allDebts));
 					
-					// Retrieve the object from storage
+					// Retrieve the alldebts array object from storage
 					retrievedObject = localStorage.getItem('testObject');
 					
-					console.log('retrievedObject: ', JSON.parse(retrievedObject));
+					//console.log('retrievedObject: ', JSON.parse(retrievedObject));
 					
 					storage = true;
 			        
 			        TopayMain.createApp("topayId", "topay_holder","This Is New Topay App", JSON.parse(retrievedObject),"all");
-			    },
+			    },// end ajax success function
 			    error: function() {
 			        //handle the error
 			        console.log('key = ' + key + 'value = ' + value);
-			    }
+			    }// end ajax error function
 			}); // end $.ajax({
 			
-		} else {
-			console.log('not null');
+		} else { // IF LOCAL STORAGE SET THEN GET ALL DEBTOBJECTS FROM THERE
+			console.log('LOCAL STORAGE SET THEN GET ALL DEBTOBJECTS FROM THERE');
 			
 			// Retrieve the object from storage
 			retrievedObject = localStorage.getItem('testObject');
@@ -89,8 +88,9 @@ $(document).ready(function(){
 			
 			storage = true;
 	        
+	        // INITIALIZE MAIN APP
 	        TopayMain.createApp("topayId", "topay_holder","This Is New Topay App", retrievedObjectPassed,"all");
-		}
+		}// if (localStorage.getItem("testObject") === null) {
 	    
 	} else {
 	    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
